@@ -1,0 +1,249 @@
+/*Variables*/
+:root {
+  --main-bg-color: #000;
+  --secondary-bg-color: #bdbdbd;
+  --primary-font-color: #000;
+  --pt-max-width: 1440px;
+  --pt-font: 'Montserrat', sans-serif;
+  --pt-font-weight: 400;
+  --pt-font-size: 16px;
+}
+/*Fonts*/
+@font-face {
+  font-family: neonFont;
+  src: url(fonts/clip/Clip.woff);
+}
+@font-face {
+  font-family: bahianaFont;
+  src: url(fonts/bahiana/Bahiana-Regular.woff);
+}
+
+/** Base CSS **/
+* {
+  margin: 0;
+  padding: 0; 
+}
+body {
+  width: 100%;
+  max-width: var(--pt-max-width);
+  margin: 0 auto;
+  font-family: var(--pt-font);
+  font-size: var(--pt-font-size);
+  font-weight: var(--pt-font-weight);
+  color: var(--primary-font-color);
+}
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+p {
+  line-height: 1.5em; 
+}
+a {
+  text-decoration: none;
+  color: var(--primary-font-color); 
+}
+ul, li {
+  margin: 0; 
+}
+ul li, li li {
+  list-style: none; 
+}
+img {
+  width: auto;
+  max-width: 100%; 
+}
+
+/** General CSS **/
+.grid-row {
+  display: flex;
+  flex-wrap: wrap; 
+}
+.grid-col-12 {
+  flex: 100%;
+  max-width: 100%; 
+}
+.grid-col-11 {
+  flex: 91.66%;
+  max-width: 91.66%; 
+}
+.grid-col-10 {
+  flex: 83.33%;
+  max-width: 83.33%; 
+}
+.grid-col-9 {
+  flex: 75%;
+  max-width: 75%; 
+}
+.grid-col-8 {
+  flex: 66.66%;
+  max-width: 66.66%; 
+}
+.grid-col-7 {
+  flex: 58.33%;
+  max-width: 58.33%; 
+}
+.grid-col-6 {
+  flex: 50%;
+  max-width: 50%; 
+}
+.grid-col-5 {
+  flex: 41.66%;
+  max-width: 41.66%; 
+}
+.grid-col-4 {
+  flex: 33.33%;
+  max-width: 33.33%; 
+}
+.grid-col-3 {
+  flex: 25%;
+  max-width: 25%; 
+}
+.grid-col-2 {
+  flex: 16.66%;
+  max-width: 16.66%; 
+}
+.grid-col-1 {
+  flex: 8.333%;
+  max-width: 8.333%; 
+}
+
+/** Home Page CSS **/
+.home .left {
+  position: relative;
+  background: url('images/wall-bg.jpg') repeat 0 0/contain var(--secondary-bg-color); 
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(75deg, #000000bd, #000000e8);
+  z-index: 0;
+}
+.neon-signs, .page-description {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.neon-signs .sign {
+  font-family: neonFont;
+}
+.neon-signs .sign.name {
+  font-size: 90px;
+  /*color: #00CFDE;*/
+  text-shadow: 0px 0px 65px #00CFDE;
+  display: flex;
+}
+.neon-signs .sign.name span {
+  margin: 0.005em;
+}
+.neon-signs .sign.name span.word-break {
+  margin-left: 20px;
+}
+.neon-signs .sign.open {
+  color: #ff40ac;
+  font-size: 80px;
+  border: 4px solid #ff40ac;
+  border-radius: 25px;
+  padding: 0 22px 10px;
+  box-shadow: 0 0 20px 0 #ff40ac73;
+  text-shadow: 0px 0px 40px #ff40ac;
+  margin-top: 30px;
+}
+.page-description {
+  background: var(--secondary-bg-color);
+}
+.page-description .title {
+  font-family: bahianaFont;
+  font-size: 90px;
+}
+.page-description .sub-title {
+  font-family: bahianaFont;
+  font-size: 40px;
+}
+.location {
+  margin: 20px 0;
+  text-align: center;
+}
+.open-hours {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.open-hours div {
+  padding: 10px 20px;
+}
+.open-hours div h4 {
+  margin-bottom: 8px;
+}
+.open-hours div p {
+  font-size: 13px;
+}
+.social-links {
+  margin-top: 50px;
+}
+.social-links a {
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+  font-size: 22px;
+  transition: 200ms ease-out;
+}
+.social-links a:hover, .social-links a:focus {
+  transform: translateY(2px) scale(1.05);
+}
+
+/** Responsive CSS **/
+@media(max-width: 1024px) {
+  .home .grid-row {
+    flex-direction: column;
+  }
+  .home .grid-col-6.right, .home .grid-col-6.left {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .neon-signs, .page-description {
+    padding: 50px 20px;
+  }
+  .neon-signs {
+    min-height: 500px;
+  }
+  .page-description {
+    min-height: auto;
+  }
+}
+@media(max-width: 768px) {
+  .neon-signs {
+    min-height: 420px;
+  }
+}
+@media(max-width: 480px) {
+  .neon-signs {
+    min-height: 363px;
+  }
+  .neon-signs .sign.name {
+    font-size: 70px;
+  }
+  .neon-signs .sign.open {
+    font-size: 60px;
+  }
+  .page-description .title {
+    font-size: 70px;
+  }
+}
+@media(max-width: 375px) {
+  .neon-signs .sign.name {
+    font-size: 65px;
+  }
+  .neon-signs .sign.open {
+    font-size: 55px;
+  }
+  .page-description .title {
+    font-size: 65px;
+  }
+}
